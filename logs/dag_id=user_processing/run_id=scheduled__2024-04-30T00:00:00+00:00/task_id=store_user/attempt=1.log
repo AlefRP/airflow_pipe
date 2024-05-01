@@ -1,0 +1,67 @@
+[2024-05-01T01:37:58.480+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: user_processing.store_user scheduled__2024-04-30T00:00:00+00:00 [queued]>
+[2024-05-01T01:37:58.489+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: user_processing.store_user scheduled__2024-04-30T00:00:00+00:00 [queued]>
+[2024-05-01T01:37:58.490+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2024-05-01T01:37:58.490+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2024-05-01T01:37:58.490+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2024-05-01T01:37:58.502+0000] {taskinstance.py:1383} INFO - Executing <Task(PythonOperator): store_user> on 2024-04-30 00:00:00+00:00
+[2024-05-01T01:37:58.508+0000] {standard_task_runner.py:55} INFO - Started process 2268 to run task
+[2024-05-01T01:37:58.510+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'user_processing', 'store_user', 'scheduled__2024-04-30T00:00:00+00:00', '--job-id', '16', '--raw', '--subdir', 'DAGS_FOLDER/user_processing.py', '--cfg-path', '/tmp/tmp5ekhmpsk']
+[2024-05-01T01:37:58.511+0000] {standard_task_runner.py:83} INFO - Job 16: Subtask store_user
+[2024-05-01T01:37:58.562+0000] {task_command.py:376} INFO - Running <TaskInstance: user_processing.store_user scheduled__2024-04-30T00:00:00+00:00 [running]> on host fe27111d44a9
+[2024-05-01T01:37:58.621+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=user_processing
+AIRFLOW_CTX_TASK_ID=store_user
+AIRFLOW_CTX_EXECUTION_DATE=2024-04-30T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-04-30T00:00:00+00:00
+[2024-05-01T01:37:58.623+0000] {postgres.py:129} INFO - Running copy expert: COPY users FROM stdin WITH DELIMITER as ",", filename: /tmp/processed_user.csv
+[2024-05-01T01:37:58.630+0000] {base.py:71} INFO - Using connection ID 'postgres' for task execution.
+[2024-05-01T01:37:58.637+0000] {taskinstance.py:1851} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 193, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/user_processing.py", line 29, in _store_user
+    filename='/tmp/processed_user.csv'
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/postgres/hooks/postgres.py", line 137, in copy_expert
+    cur.copy_expert(sql, file)
+psycopg2.errors.SyntaxError: syntax error at or near "",""
+LINE 1: COPY users FROM stdin WITH DELIMITER as ","
+                                                ^
+
+[2024-05-01T01:37:58.650+0000] {taskinstance.py:1406} INFO - Marking task as FAILED. dag_id=user_processing, task_id=store_user, execution_date=20240430T000000, start_date=20240501T013758, end_date=20240501T013758
+[2024-05-01T01:37:58.666+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 16 for task store_user (syntax error at or near "",""
+LINE 1: COPY users FROM stdin WITH DELIMITER as ","
+                                                ^
+; 2268)
+[2024-05-01T01:37:58.682+0000] {local_task_job.py:164} INFO - Task exited with return code 1
+[2024-05-01T01:37:58.699+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-01T01:41:02.019+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: user_processing.store_user scheduled__2024-04-30T00:00:00+00:00 [queued]>
+[2024-05-01T01:41:02.031+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: user_processing.store_user scheduled__2024-04-30T00:00:00+00:00 [queued]>
+[2024-05-01T01:41:02.031+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2024-05-01T01:41:02.032+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2024-05-01T01:41:02.032+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2024-05-01T01:41:02.046+0000] {taskinstance.py:1383} INFO - Executing <Task(PythonOperator): store_user> on 2024-04-30 00:00:00+00:00
+[2024-05-01T01:41:02.053+0000] {standard_task_runner.py:55} INFO - Started process 2427 to run task
+[2024-05-01T01:41:02.057+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'user_processing', 'store_user', 'scheduled__2024-04-30T00:00:00+00:00', '--job-id', '21', '--raw', '--subdir', 'DAGS_FOLDER/user_processing.py', '--cfg-path', '/tmp/tmp5h895ckq']
+[2024-05-01T01:41:02.085+0000] {standard_task_runner.py:83} INFO - Job 21: Subtask store_user
+[2024-05-01T01:41:02.165+0000] {task_command.py:376} INFO - Running <TaskInstance: user_processing.store_user scheduled__2024-04-30T00:00:00+00:00 [running]> on host fe27111d44a9
+[2024-05-01T01:41:02.225+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=user_processing
+AIRFLOW_CTX_TASK_ID=store_user
+AIRFLOW_CTX_EXECUTION_DATE=2024-04-30T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-04-30T00:00:00+00:00
+[2024-05-01T01:41:02.226+0000] {postgres.py:129} INFO - Running copy expert: COPY users FROM stdin WITH DELIMITER ',', filename: /tmp/processed_user.csv
+[2024-05-01T01:41:02.234+0000] {base.py:71} INFO - Using connection ID 'postgres' for task execution.
+[2024-05-01T01:41:02.241+0000] {python.py:177} INFO - Done. Returned value was: None
+[2024-05-01T01:41:02.250+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=user_processing, task_id=store_user, execution_date=20240430T000000, start_date=20240501T014102, end_date=20240501T014102
+[2024-05-01T01:41:02.282+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2024-05-01T01:41:02.298+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

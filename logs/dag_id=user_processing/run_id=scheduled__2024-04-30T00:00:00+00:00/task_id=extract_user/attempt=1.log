@@ -1,0 +1,89 @@
+[2024-05-01T00:33:29.052+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: user_processing.extract_user scheduled__2024-04-30T00:00:00+00:00 [queued]>
+[2024-05-01T00:33:29.071+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: user_processing.extract_user scheduled__2024-04-30T00:00:00+00:00 [queued]>
+[2024-05-01T00:33:29.071+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2024-05-01T00:33:29.072+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2024-05-01T00:33:29.072+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2024-05-01T00:33:29.093+0000] {taskinstance.py:1383} INFO - Executing <Task(SimpleHttpOperator): extract_user> on 2024-04-30 00:00:00+00:00
+[2024-05-01T00:33:29.100+0000] {standard_task_runner.py:55} INFO - Started process 453 to run task
+[2024-05-01T00:33:29.103+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'user_processing', 'extract_user', 'scheduled__2024-04-30T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/user_processing.py', '--cfg-path', '/tmp/tmpyx2r6thj']
+[2024-05-01T00:33:29.106+0000] {standard_task_runner.py:83} INFO - Job 3: Subtask extract_user
+[2024-05-01T00:33:29.178+0000] {task_command.py:376} INFO - Running <TaskInstance: user_processing.extract_user scheduled__2024-04-30T00:00:00+00:00 [running]> on host 3625f7351c61
+[2024-05-01T00:33:29.295+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=user_processing
+AIRFLOW_CTX_TASK_ID=extract_user
+AIRFLOW_CTX_EXECUTION_DATE=2024-04-30T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-04-30T00:00:00+00:00
+[2024-05-01T00:33:29.296+0000] {http.py:121} INFO - Calling HTTP method
+[2024-05-01T00:33:29.328+0000] {taskinstance.py:1851} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/http/operators/http.py", line 123, in execute
+    response = http.run(self.endpoint, self.data, self.headers, self.extra_options)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/http/hooks/http.py", line 128, in run
+    session = self.get_conn(headers)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/http/hooks/http.py", line 82, in get_conn
+    conn = self.get_connection(self.http_conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/hooks/base.py", line 70, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 432, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `user_api` isn't defined
+[2024-05-01T00:33:29.336+0000] {taskinstance.py:1406} INFO - Marking task as FAILED. dag_id=user_processing, task_id=extract_user, execution_date=20240430T000000, start_date=20240501T003329, end_date=20240501T003329
+[2024-05-01T00:33:29.355+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 3 for task extract_user (The conn_id `user_api` isn't defined; 453)
+[2024-05-01T00:33:29.402+0000] {local_task_job.py:164} INFO - Task exited with return code 1
+[2024-05-01T00:33:29.446+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-01T01:37:55.437+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: user_processing.extract_user scheduled__2024-04-30T00:00:00+00:00 [queued]>
+[2024-05-01T01:37:55.448+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: user_processing.extract_user scheduled__2024-04-30T00:00:00+00:00 [queued]>
+[2024-05-01T01:37:55.448+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2024-05-01T01:37:55.449+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2024-05-01T01:37:55.449+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2024-05-01T01:37:55.460+0000] {taskinstance.py:1383} INFO - Executing <Task(SimpleHttpOperator): extract_user> on 2024-04-30 00:00:00+00:00
+[2024-05-01T01:37:55.466+0000] {standard_task_runner.py:55} INFO - Started process 2253 to run task
+[2024-05-01T01:37:55.468+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'user_processing', 'extract_user', 'scheduled__2024-04-30T00:00:00+00:00', '--job-id', '14', '--raw', '--subdir', 'DAGS_FOLDER/user_processing.py', '--cfg-path', '/tmp/tmpov_bs0xw']
+[2024-05-01T01:37:55.470+0000] {standard_task_runner.py:83} INFO - Job 14: Subtask extract_user
+[2024-05-01T01:37:55.517+0000] {task_command.py:376} INFO - Running <TaskInstance: user_processing.extract_user scheduled__2024-04-30T00:00:00+00:00 [running]> on host fe27111d44a9
+[2024-05-01T01:37:55.574+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=user_processing
+AIRFLOW_CTX_TASK_ID=extract_user
+AIRFLOW_CTX_EXECUTION_DATE=2024-04-30T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-04-30T00:00:00+00:00
+[2024-05-01T01:37:55.575+0000] {http.py:121} INFO - Calling HTTP method
+[2024-05-01T01:37:55.583+0000] {base.py:71} INFO - Using connection ID 'user_api' for task execution.
+[2024-05-01T01:37:55.584+0000] {http.py:148} INFO - Sending 'GET' to url: https://randomuser.me/api/
+[2024-05-01T01:37:56.092+0000] {http.py:125} INFO - {"results":[{"gender":"male","name":{"title":"Mr","first":"Dharun","last":"Belligatti"},"location":{"street":{"number":7616,"name":"College St"},"city":"Parbhani","state":"Himachal Pradesh","country":"India","postcode":53160,"coordinates":{"latitude":"8.2720","longitude":"-51.5337"},"timezone":{"offset":"-11:00","description":"Midway Island, Samoa"}},"email":"dharun.belligatti@example.com","login":{"uuid":"520c3b67-8d4d-4267-92e2-ae308b601ff5","username":"tinydog679","password":"brenda","salt":"IZqZlBCg","md5":"d24642bcc2c05eec4d6a47ff6fd9e7dc","sha1":"9ce72af5c1a6cc9c71751edaca5bc53cc92cc5ad","sha256":"4186c23be522ec3238754313d2fd9f7eb41d220a7f3553beb418faa2bd306b6a"},"dob":{"date":"1997-04-17T04:19:48.431Z","age":27},"registered":{"date":"2006-05-02T19:37:12.736Z","age":17},"phone":"8740199376","cell":"8947663442","id":{"name":"UIDAI","value":"191557268901"},"picture":{"large":"https://randomuser.me/api/portraits/men/0.jpg","medium":"https://randomuser.me/api/portraits/med/men/0.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/men/0.jpg"},"nat":"IN"}],"info":{"seed":"6adf67101ce94249","results":1,"page":1,"version":"1.4"}}
+[2024-05-01T01:37:56.117+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=user_processing, task_id=extract_user, execution_date=20240430T000000, start_date=20240501T013755, end_date=20240501T013756
+[2024-05-01T01:37:56.162+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2024-05-01T01:37:56.188+0000] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-05-01T01:40:58.007+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: user_processing.extract_user scheduled__2024-04-30T00:00:00+00:00 [queued]>
+[2024-05-01T01:40:58.021+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: user_processing.extract_user scheduled__2024-04-30T00:00:00+00:00 [queued]>
+[2024-05-01T01:40:58.021+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2024-05-01T01:40:58.022+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2024-05-01T01:40:58.022+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2024-05-01T01:40:58.034+0000] {taskinstance.py:1383} INFO - Executing <Task(SimpleHttpOperator): extract_user> on 2024-04-30 00:00:00+00:00
+[2024-05-01T01:40:58.040+0000] {standard_task_runner.py:55} INFO - Started process 2421 to run task
+[2024-05-01T01:40:58.044+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'user_processing', 'extract_user', 'scheduled__2024-04-30T00:00:00+00:00', '--job-id', '19', '--raw', '--subdir', 'DAGS_FOLDER/user_processing.py', '--cfg-path', '/tmp/tmppl6_dfjm']
+[2024-05-01T01:40:58.046+0000] {standard_task_runner.py:83} INFO - Job 19: Subtask extract_user
+[2024-05-01T01:40:58.108+0000] {task_command.py:376} INFO - Running <TaskInstance: user_processing.extract_user scheduled__2024-04-30T00:00:00+00:00 [running]> on host fe27111d44a9
+[2024-05-01T01:40:58.168+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=user_processing
+AIRFLOW_CTX_TASK_ID=extract_user
+AIRFLOW_CTX_EXECUTION_DATE=2024-04-30T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-04-30T00:00:00+00:00
+[2024-05-01T01:40:58.170+0000] {http.py:121} INFO - Calling HTTP method
+[2024-05-01T01:40:58.179+0000] {base.py:71} INFO - Using connection ID 'user_api' for task execution.
+[2024-05-01T01:40:58.180+0000] {http.py:148} INFO - Sending 'GET' to url: https://randomuser.me/api/
+[2024-05-01T01:40:58.708+0000] {http.py:125} INFO - {"results":[{"gender":"male","name":{"title":"Mr","first":"Krasun","last":"Buriy"},"location":{"street":{"number":7354,"name":"Pirogovska"},"city":"Oleksandrivsk","state":"Dnipropetrovska","country":"Ukraine","postcode":79148,"coordinates":{"latitude":"81.0857","longitude":"-46.1138"},"timezone":{"offset":"-4:00","description":"Atlantic Time (Canada), Caracas, La Paz"}},"email":"krasun.buriy@example.com","login":{"uuid":"714b3a2c-a522-43aa-b649-2436d7052e67","username":"crazylion241","password":"fuzzy","salt":"PuilnQN8","md5":"cf97e6c2b341d60795adf607b693bca4","sha1":"4c06cb33daf549f4fd5de947cc165c390cae6eaa","sha256":"b3886c203528c585ea276eb674597ebd8d03e64bb07f917adae7998279cd9ede"},"dob":{"date":"1959-12-13T03:11:06.246Z","age":64},"registered":{"date":"2007-03-10T04:45:10.934Z","age":17},"phone":"(098) L03-1844","cell":"(096) F27-2468","id":{"name":"","value":null},"picture":{"large":"https://randomuser.me/api/portraits/men/43.jpg","medium":"https://randomuser.me/api/portraits/med/men/43.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/men/43.jpg"},"nat":"UA"}],"info":{"seed":"e10b79fbfcf4cdbc","results":1,"page":1,"version":"1.4"}}
+[2024-05-01T01:40:58.734+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=user_processing, task_id=extract_user, execution_date=20240430T000000, start_date=20240501T014058, end_date=20240501T014058
+[2024-05-01T01:40:58.777+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2024-05-01T01:40:58.813+0000] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

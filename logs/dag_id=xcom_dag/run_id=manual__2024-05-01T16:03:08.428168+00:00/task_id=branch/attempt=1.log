@@ -1,0 +1,25 @@
+[2024-05-01T16:03:11.393+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: xcom_dag.branch manual__2024-05-01T16:03:08.428168+00:00 [queued]>
+[2024-05-01T16:03:11.405+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: xcom_dag.branch manual__2024-05-01T16:03:08.428168+00:00 [queued]>
+[2024-05-01T16:03:11.406+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2024-05-01T16:03:11.406+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2024-05-01T16:03:11.406+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2024-05-01T16:03:11.423+0000] {taskinstance.py:1383} INFO - Executing <Task(BranchPythonOperator): branch> on 2024-05-01 16:03:08.428168+00:00
+[2024-05-01T16:03:11.429+0000] {standard_task_runner.py:55} INFO - Started process 13129 to run task
+[2024-05-01T16:03:11.431+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'xcom_dag', 'branch', 'manual__2024-05-01T16:03:08.428168+00:00', '--job-id', '56', '--raw', '--subdir', 'DAGS_FOLDER/xcom_dag.py', '--cfg-path', '/tmp/tmpdvokx_7r']
+[2024-05-01T16:03:11.432+0000] {standard_task_runner.py:83} INFO - Job 56: Subtask branch
+[2024-05-01T16:03:11.495+0000] {task_command.py:376} INFO - Running <TaskInstance: xcom_dag.branch manual__2024-05-01T16:03:08.428168+00:00 [running]> on host 2b3d48884d47
+[2024-05-01T16:03:11.568+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=xcom_dag
+AIRFLOW_CTX_TASK_ID=branch
+AIRFLOW_CTX_EXECUTION_DATE=2024-05-01T16:03:08.428168+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-05-01T16:03:08.428168+00:00
+[2024-05-01T16:03:11.580+0000] {python.py:177} INFO - Done. Returned value was: t2
+[2024-05-01T16:03:11.581+0000] {skipmixin.py:155} INFO - Following branch t2
+[2024-05-01T16:03:11.581+0000] {skipmixin.py:190} INFO - Skipping tasks ['t3']
+[2024-05-01T16:03:11.629+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=xcom_dag, task_id=branch, execution_date=20240501T160308, start_date=20240501T160311, end_date=20240501T160311
+[2024-05-01T16:03:11.684+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2024-05-01T16:03:11.715+0000] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check
