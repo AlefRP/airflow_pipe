@@ -1,14 +1,14 @@
-# Airflow Pipeline
+# Airflow Pipeline 🌬️
 
-## Project Overview
+## Project Overview 📝
 
 This repository showcases Apache Airflow projects developed during an in-depth learning course. It includes diverse DAGs, tasks, and workflow integrations, demonstrating practical applications and advanced features of Airflow.
 
-## Setup and Configuration
+## Setup and Configuration ⚙️
 
 To run the Airflow environment using Docker Compose and integrate with services like APIs and PostgreSQL, follow these steps:
 
-### Starting the Environment
+### Starting the Environment 🚀
 
 1. Ensure Docker is installed and running on your machine.
 2. Clone this repository to your local system.
@@ -21,7 +21,7 @@ To run the Airflow environment using Docker Compose and integrate with services 
 
     The `-d` flag indicates that the containers should be started in the background.
 
-### Configuring Airflow
+### Configuring Airflow 🔧
 
 1. Once the services are up, access the Airflow web interface by navigating to `http://localhost:8080`.
 2. Log in with the default credentials provided in the Docker setup.
@@ -41,10 +41,10 @@ To run the Airflow environment using Docker Compose and integrate with services 
   - **Conn Type**: `HTTP`
   - **Host**: `https://randomuser.me/`
 
-## Contributions
+## Contributions 🤝
 
 Contributions to this project are welcome. Please fork the repository and submit pull requests with your enhancements.
 
-## License
+## License 📜
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details.
